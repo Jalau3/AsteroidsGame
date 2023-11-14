@@ -1,17 +1,24 @@
 Spaceship blob = new Spaceship();
+Star[] stars = new Star[100];
 
 void setup(){
-  size(500,500);
+  size(600,600);
   background(0);
+  for(int i = 0; i<stars.length; i++){
+    stars[i] = new Star();
+  }
 }
 
 void draw(){
   background(0);
   blob.show();
   blob.move();
+  for(int i = 0; i<stars.length; i++){
+    stars[i].show();
+  }
 }
 
-void keyPressed(){
+public void keyPressed(){
  if(key == 'w'){
    blob.accelerate(0.5);
  }
@@ -26,5 +33,6 @@ void keyPressed(){
  }
   
 }
+
 
 
