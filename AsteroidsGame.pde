@@ -1,7 +1,7 @@
 Spaceship blob = new Spaceship();
 Star[] stars = new Star[100];
 
-void setup(){
+public void setup(){
   size(600,600);
   background(0);
   for(int i = 0; i<stars.length; i++){
@@ -9,7 +9,7 @@ void setup(){
   }
 }
 
-void draw(){
+public void draw(){
   background(0);
   blob.show();
   blob.move();
