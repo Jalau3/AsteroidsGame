@@ -37,5 +37,12 @@ class Spaceship extends Floater{
     //"unrotate" and "untranslate" in reverse order
     rotate(-1*dRadians);
     translate(-1*(float)myCenterX, -1*(float)myCenterY);
-  }   
+  }  
+  public void hyperspace(){
+    myCenterX = Math.random()*width;
+    myCenterY = Math.random()*width;
+    myXspeed = 0;
+    myYspeed = 0;
+    myPointDirection = Math.random()*360;
+  }
 }
