@@ -31,7 +31,10 @@ public void keyPressed(){
  if(key == 's'){
    blob.accelerate(-0.5);
  }
-  
+if(key == 'f'){
+   blob.hyperspace();
+ }
+
 }
 
 
