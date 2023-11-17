@@ -1,5 +1,5 @@
 class Spaceship extends Floater{
-  protected int r,g,b;
+  private int r,g,b;
   public Spaceship(){
     corners = 4;
     xCorners = new int[]{-8, -3, -8,16};
