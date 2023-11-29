@@ -1,11 +1,16 @@
 Spaceship blob = new Spaceship();
 Star[] stars = new Star[100];
+ArrayList<Asteroid>rocks = new ArrayList<Asteroid>();
 
 public void setup(){
   size(600,600);
   background(0);
   for(int i = 0; i<stars.length; i++){
     stars[i] = new Star();
+  }
+  for(int i = 0; i<10; i++){
+    rocks.add(new Asteroid());
+    (rocks.get(i)).createCorners();
   }
 }
 
@@ -15,6 +20,10 @@ public void draw(){
   blob.move();
   for(int i = 0; i<stars.length; i++){
     stars[i].show();
+  }
+  for(int j = 0; j<rocks.size(); j++){
+    (rocks.get(j)).move();
+    (rocks.get(j)).show();
   }
 }
 
@@ -31,9 +40,11 @@ public void keyPressed(){
  if(key == 's'){
    blob.accelerate(-0.5);
  }
-if(key == 'f'){
+ if(key == 'h'){
    blob.hyperspace();
  }
+  
+}
 
 }
 
