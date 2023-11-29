@@ -20,7 +20,6 @@ class Asteroid extends Floater{
       float addRadius = (float)Math.random()*9-4;
       xCorners[i] = cos(section)*(radius+addRadius);
       yCorners[i] = sin(section)*(radius+addRadius);
-      System.out.println(xCorners[i]+"  "+yCorners[i]);
     }
   }
   public void move(){
