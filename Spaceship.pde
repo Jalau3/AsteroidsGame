@@ -1,21 +1,43 @@
-class Spaceship extends Floater{
-  private int r,g,b;
-  public Spaceship(){
-    corners = 4;
-    xCorners = new int[]{-8, -3, -8,16};
-    yCorners = new int[]{8, 0,-8,0};
-    myCenterX = 300;
-    myCenterY = 300;
-    myXspeed = 0;
-    myYspeed = 0;
-    myPointDirection = -90;
-    r = 210;
-    g = 52;
-    b = 235;
+class Asteroid extends Floater{
+  private float radius, rotSpeed;
+  private float[] xCorners, yCorners;
+  public Asteroid(){
+    corners = (int)(Math.random()*5)+5;
+    xCorners = new float[corners];
+    yCorners = new float[corners];
+    myCenterX = Math.random()*width;
+    myCenterY = Math.random()*width;
+    myXspeed = (Math.random()*3-1)*0.5;
+    myYspeed = (Math.random()*3-1)*0.5;
+    myPointDirection = Math.random()*2*Math.PI;
+    myColor = 255;
+    radius = (float)(Math.random()*20)+5;
+    rotSpeed = (float)Math.random()+0.5;
   }
-    public void show ()  //Draws the floater at the current position  
+  public void createCorners(){
+    for(int i = 0; i<corners; i++){
+      float section = (2*PI*(i+1)/corners)+((float)Math.random()-0.5);
+      float addRadius = (float)Math.random()*9-4;
+      xCorners[i] = cos(section)*(radius+addRadius);
+      yCorners[i] = sin(section)*(radius+addRadius);
+    }
+  }
+  public void move(){
+    turn(rotSpeed);
+    super.move();
+  }
+   public float getX(){
+    return (float)myCenterX;
+  }
+  public float getY(){
+    return (float)myCenterY;
+  }
+  public float getRadius(){
+    return radius;
+  }
+   public void show()  //Draws the floater at the current position  
   {             
-    stroke(r,g,b);    
+    stroke(myColor);    
     noFill();
     //translate the (x,y) center of the ship to the correct position
     translate((float)myCenterX, (float)myCenterY);
@@ -38,11 +60,5 @@ class Spaceship extends Floater{
     rotate(-1*dRadians);
     translate(-1*(float)myCenterX, -1*(float)myCenterY);
   }  
-  public void hyperspace(){
-    myCenterX = Math.random()*width;
-    myCenterY = Math.random()*width;
-    myXspeed = 0;
-    myYspeed = 0;
-    myPointDirection = Math.random()*360;
-  }
+
 }
