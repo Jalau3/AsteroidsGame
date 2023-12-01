@@ -26,6 +26,15 @@ class Asteroid extends Floater{
     turn(rotSpeed);
     super.move();
   }
+   public float getX(){
+    return (float)myCenterX;
+  }
+  public float getY(){
+    return (float)myCenterY;
+  }
+  public float getRadius(){
+    return radius;
+  }
    public void show()  //Draws the floater at the current position  
   {             
     stroke(myColor);    
