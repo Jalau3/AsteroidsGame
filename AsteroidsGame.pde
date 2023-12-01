@@ -1,6 +1,7 @@
+
 Spaceship blob = new Spaceship();
 Star[] stars = new Star[100];
-ArrayList <Asteroid> rocks = new ArrayList <Asteroid>();
+ArrayList<Asteroid>rocks = new ArrayList<Asteroid>();
 
 public void setup(){
   size(600,600);
@@ -22,8 +23,13 @@ public void draw(){
     stars[i].show();
   }
   for(int j = 0; j<rocks.size(); j++){
-    (rocks.get(j)).move();
-    (rocks.get(j)).show();
+    Asteroid rock = rocks.get(j);
+    rock.move();
+    float d = dist(blob.getX(), blob.getY(), rock.getX(), rock.getY());
+    if(d<rock.getRadius()-2){
+      rocks.remove(j);
+    }
+    rock.show();
   }
 }
 
@@ -45,6 +51,5 @@ public void keyPressed(){
  }
   
 }
-
 
 
