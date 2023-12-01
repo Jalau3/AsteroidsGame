@@ -26,7 +26,7 @@ public void draw(){
     Asteroid rock = rocks.get(j);
     rock.move();
     float d = dist(blob.getX(), blob.getY(), rock.getX(), rock.getY());
-    if(d<rock.getRadius()-2){
+    if(d<rock.getRadius()+3){
       rocks.remove(j);
     }
     rock.show();
