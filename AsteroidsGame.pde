@@ -131,10 +131,10 @@ public void keyPressed() {
     blob.accelerate(0.5);
   }
   if (key == 'a') {
-    blob.turn(-5);
+    blob.turn(-10);
   }
   if (key == 'd') {
-    blob.turn(5);
+    blob.turn(10);
   }
   if (key == 's') 
 
