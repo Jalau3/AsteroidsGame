@@ -109,8 +109,8 @@ public void draw() {
     fill(235, 219, 52);
     if (play==true) {
       blob.show();
-      text("Game Over", 300, 300);
-      text("Press Space to restart", 300, 330);
+      text("Game Over", 330, 300);
+      text("Press Space to restart", 330, 330);
     } else {
       textSize(50);
       text("Asteroids", width/2, width/2);
