@@ -133,17 +133,17 @@ public void keyPressed() {
   if (key == 'w') {
     blob.accelerate(0.5);
   }
-  if (key == 'a') {
+  if (key == 'a'&&lives==0) {
     blob.turn(-10);
   }
-  if (key == 'd') {
+  if (key == 'd'&&lives==0) {
     blob.turn(10);
   }
   if (key == 's') 
 
     blob.accelerate(-0.5);
 
-  if (key == 'h') {
+  if (key == 'h'&&lives==0) {
     if(countH == 0){
       blob.hyperspace();
       countH = 100;
