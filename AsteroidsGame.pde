@@ -3,7 +3,8 @@ Star[] stars = new Star[100];
 ArrayList <Asteroid> rocks = new ArrayList <Asteroid>();
 ArrayList <Bullet> bullets = new ArrayList <Bullet>();
 ArrayList <Spaceship> showLives = new ArrayList<Spaceship>();
-int countB, score, lives, highscore, countH;
+int countB, score, lives, highscore;
+float countH;
 boolean play;
 
 public void setup() {
@@ -31,7 +32,7 @@ public void draw() {
   if (countB>0)
     countB--;
   if(countH > 0)
-    countH --;
+    countH = countH-0.5;
   if (lives>0) {
     blob.show();
     blob.move();
@@ -105,7 +106,7 @@ public void draw() {
     fill(235, 219, 52);
     if (play==true) {
       blob.show();
-
+      textAlign(CENTER);
       text("Game Over", width/2, width/2);
       text("Press Space to restart", width/2, width/2+30);
     } else {
