@@ -35,7 +35,6 @@ public void draw() {
   if (lives>0) {
     blob.show();
     blob.move();
-    System.out.println(blob.getXspeed() + "  "+blob.getYspeed());
     for (int i = 0; i<lives; i++) {
       showLives.get(i).show();
     }
