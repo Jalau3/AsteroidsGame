@@ -105,23 +105,21 @@ public void draw() {
     for (int i = 0; i<rocks.size(); i++) {
       rocks.get(i).show();
     }
-    
+    textAlign(CENTER);
+    fill(235, 219, 52);
     if (play==true) {
       blob.show();
-      textAlign(CENTER);
-      fill(235, 219, 52);
+      textSize(20);
       text("Game Over", width/2, height/2);
       text("Press Space to restart", width/2, height/2+30);
     } else {
-      textAlign(CENTER);
-      fill(235, 219, 52);
       textSize(50);
       text("Asteroids", width/2, width/2);
       textSize(20);
       text("Press Space to start", width/2, width/2+40);
     }
   }
-  fill(255);
+    fill(255);
     textSize(20);
     textAlign(LEFT);
     text("HI: "+highscore, 15, 25);
