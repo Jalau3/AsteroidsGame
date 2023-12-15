@@ -32,7 +32,7 @@ public void draw() {
   if (countB>0)
     countB--;
   if(countH > 0)
-    countH = countH-0.5;
+    countH = countH-0.3;
   if (lives>0) {
     blob.show();
     blob.move();
@@ -78,15 +78,18 @@ public void draw() {
         }
       }
     }
+    //hyperspace button
     textSize(10); 
     textAlign(RIGHT);
     fill(255);
     text("Hyperspace",width-10, 50);
+    //score
     fill(255);
     textSize(20);
     fill(210,52,235);
     textAlign(LEFT);
     text(score, 15, 50);
+    //hyperspace load bar
     noFill();
     stroke(255);
     rect(width-112, 55, 102, 10);
@@ -106,8 +109,7 @@ public void draw() {
     fill(235, 219, 52);
     if (play==true) {
       blob.show();
-      textAlign(CENTER);
-      text("Game Over", width/2, width/2);
+      text("Game Over", width/2, height/2);
       text("Press Space to restart", width/2, width/2+30);
     } else {
       textSize(50);
